@@ -2,6 +2,7 @@
 
 import 'package:alot/core/colors/colors.dart';
 import 'package:alot/core/dims/dims.dart';
+import 'package:alot/core/utils/utils.dart';
 import 'package:alot/presentation/auth/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -144,8 +145,8 @@ class WelcomeSliderScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/logos/footer-logo.png',
+              LoadAssetImage(
+                url: 'assets/logos/footer-logo.png',
                 height: 100,
                 width: 200,
               ),

@@ -51,8 +51,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             height35,
-            Image.asset(
-              'assets/logos/footer-logo.png',
+            LoadAssetImage(
+              url: 'assets/logos/footer-logo.png',
               height: 60,
               width: 60,
               alignment: Alignment.center,
@@ -415,12 +415,5 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
       ),
     );
-  }
-
-  Color getColor(Set<MaterialState> states) {
-    if (states.contains(MaterialState.selected)) {
-      return Colors.blue; // Color when checkbox is checked
-    }
-    return Colors.white; // Color when checkbox is unchecked
   }
 }
