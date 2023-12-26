@@ -5,6 +5,7 @@ import 'package:alot/core/dims/dims.dart';
 import 'package:alot/core/utils/utils.dart';
 import 'package:alot/presentation/auth/forgot_password/forgot_password.dart';
 import 'package:alot/presentation/auth/register/register.dart';
+import 'package:alot/presentation/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +31,14 @@ class LoginScreen extends StatelessWidget {
             Align(
               alignment: Alignment.topRight,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => DashboardScreen(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Skip',
                   style: GoogleFonts.poppins(color: colorGrey),

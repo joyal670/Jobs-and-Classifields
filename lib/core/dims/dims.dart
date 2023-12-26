@@ -92,6 +92,14 @@ const height60 = SizedBox(
   height: 60,
 );
 
+const height70 = SizedBox(
+  height: 70,
+);
+
+const height80 = SizedBox(
+  height: 80,
+);
+
 const height100 = SizedBox(
   height: 100,
 );

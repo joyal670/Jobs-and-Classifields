@@ -4,9 +4,9 @@ import 'package:alot/core/colors/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+// remove redundant clicks
 DateTime loginClickTime = DateTime.now();
 const Duration clickInterval = Duration(seconds: 2);
-
 bool isRedundantClick(DateTime currentTime) {
   if (loginClickTime == null ||
       currentTime.difference(loginClickTime) >= clickInterval) {
@@ -23,6 +23,7 @@ bool isRedundantClick(DateTime currentTime) {
   }
 }
 
+// show snackbar
 void showSnackBar(BuildContext context, String title) {
   var snackBar = SnackBar(
     content: Text(title),
@@ -39,6 +40,7 @@ void showSnackBar(BuildContext context, String title) {
     ..showSnackBar(snackBar);
 }
 
+// load asset image
 class LoadAssetImage extends StatelessWidget {
   final String url;
   final double? width;
