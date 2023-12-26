@@ -63,137 +63,7 @@ class HomeScreen extends StatelessWidget {
                     homeLocationList: homeLocationList,
                   ),
                   height60,
-                  Container(
-                    decoration: BoxDecoration(color: colorBackground),
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Your FREE Classified app',
-                          style: GoogleFonts.poppins(
-                            color: colorOrange,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        height3,
-                        Text(
-                          'The Most Poweful Search app in the Market',
-                          style: GoogleFonts.poppins(
-                            color: colorBlack,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        height25,
-                        SizedBox(
-                          height: 200,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Container(
-                                width: 250,
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    color: colorWhite,
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/svg/shop.svg',
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    height20,
-                                    Text(
-                                      'Search Anything you are looking for',
-                                      softWrap: true,
-                                      style: GoogleFonts.poppins(fontSize: 16),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    height5,
-                                    Text(
-                                      'Leverage agile framework to provide a robust high level synopsys overviews',
-                                      style: GoogleFonts.poppins(
-                                          color: colorGrey, fontSize: 12),
-                                      softWrap: true,
-                                      textAlign: TextAlign.center,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              width15,
-                              Container(
-                                width: 250,
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    color: colorWhite,
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Column(
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/svg/cards.svg',
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    height20,
-                                    Text(
-                                      'Find your ads with precise location',
-                                      softWrap: true,
-                                      style: GoogleFonts.poppins(fontSize: 16),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    height5,
-                                    Text(
-                                      'Bring to the table survival strategies to ensure proactive domination',
-                                      style: GoogleFonts.poppins(
-                                          color: colorGrey, fontSize: 12),
-                                      softWrap: true,
-                                      textAlign: TextAlign.center,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              width15,
-                              Container(
-                                width: 250,
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    color: colorWhite,
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Column(
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/svg/favorite-chart.svg',
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    height20,
-                                    Text(
-                                      'Explore from the best available ads',
-                                      softWrap: true,
-                                      style: GoogleFonts.poppins(fontSize: 16),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    height5,
-                                    Text(
-                                      'Grow the holistic world view of disruptive innovation workspace',
-                                      style: GoogleFonts.poppins(
-                                          color: colorGrey, fontSize: 12),
-                                      softWrap: true,
-                                      textAlign: TextAlign.center,
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        height10,
-                      ],
-                    ),
-                  )
+                  FreeClassified()
                 ],
               ),
             ),
@@ -303,6 +173,151 @@ class HomeScreen extends StatelessWidget {
     homeLocationList.add(HomeLocationModel(location: 'Sharjah', count: '0'));
     homeLocationList
         .add(HomeLocationModel(location: 'Umm al-Quwain', count: '0'));
+  }
+}
+
+class FreeClassified extends StatelessWidget {
+  const FreeClassified({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: colorBackground),
+      padding: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Your FREE Classified app',
+            style: GoogleFonts.poppins(
+              color: colorOrange,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          height3,
+          Text(
+            'The Most Poweful Search app in the Market',
+            style: GoogleFonts.poppins(
+              color: colorBlack,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          height25,
+          SizedBox(
+            height: 200,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  width: 250,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: colorWhite,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/shop.svg',
+                        width: 30,
+                        height: 30,
+                      ),
+                      height20,
+                      Text(
+                        'Search Anything you are looking for',
+                        softWrap: true,
+                        style: GoogleFonts.poppins(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                      height5,
+                      Text(
+                        'Leverage agile framework to provide a robust high level synopsys overviews',
+                        style:
+                            GoogleFonts.poppins(color: colorGrey, fontSize: 12),
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+                width15,
+                Container(
+                  width: 250,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: colorWhite,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/cards.svg',
+                        width: 30,
+                        height: 30,
+                      ),
+                      height20,
+                      Text(
+                        'Find your ads with precise location',
+                        softWrap: true,
+                        style: GoogleFonts.poppins(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                      height5,
+                      Text(
+                        'Bring to the table survival strategies to ensure proactive domination',
+                        style:
+                            GoogleFonts.poppins(color: colorGrey, fontSize: 12),
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+                width15,
+                Container(
+                  width: 250,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: colorWhite,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/favorite-chart.svg',
+                        width: 30,
+                        height: 30,
+                      ),
+                      height20,
+                      Text(
+                        'Explore from the best available ads',
+                        softWrap: true,
+                        style: GoogleFonts.poppins(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                      height5,
+                      Text(
+                        'Grow the holistic world view of disruptive innovation workspace',
+                        style:
+                            GoogleFonts.poppins(color: colorGrey, fontSize: 12),
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          height10,
+        ],
+      ),
+    );
   }
 }
 
