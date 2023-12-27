@@ -17,8 +17,8 @@ class WelcomeSliderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBoardingSlider(
       finishButtonText: 'Get Started',
-      finishButtonTextStyle: GoogleFonts.montserrat(
-          color: colorWhite, fontWeight: FontWeight.w800),
+      finishButtonTextStyle:
+          GoogleFonts.poppins(color: colorWhite, fontWeight: FontWeight.w800),
       onFinish: () {
         Navigator.push(
           context,

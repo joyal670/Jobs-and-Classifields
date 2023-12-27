@@ -63,7 +63,48 @@ class HomeScreen extends StatelessWidget {
                     homeLocationList: homeLocationList,
                   ),
                   height60,
-                  FreeClassified()
+                  FreeClassified(),
+                  height60,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Top companies',
+                        style: GoogleFonts.poppins(
+                            color: colorBlack, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: Icon(Icons.arrow_forward))
+                    ],
+                  ),
+                  height3,
+                  SizedBox(
+                    height: 200,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, index) {
+                          return Column(
+                            children: [
+                              Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Image.network(
+                                    'https://img.icons8.com/ios/50/property.png',
+                                    width: 70,
+                                    height: 70,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'Company',
+                                style: GoogleFonts.poppins(),
+                              )
+                            ],
+                          );
+                        },
+                        separatorBuilder: (ctx, index) => width15,
+                        itemCount: 3),
+                  )
                 ],
               ),
             ),
@@ -438,9 +479,7 @@ class LocationCategories extends StatelessWidget {
               ),
             );
           },
-          separatorBuilder: (ctx, index) {
-            return width15;
-          },
+          separatorBuilder: (ctx, index) => width15,
           itemCount: homeLocationList.length),
     );
   }
