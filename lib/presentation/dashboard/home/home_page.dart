@@ -290,66 +290,95 @@ class PopularProperty extends StatelessWidget {
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (ctx, index) {
-            return SizedBox(
-              width: 140,
-              height: 145,
-              child: Card(
-                elevation: 2,
-                shape: ContinuousRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    10,
-                  ),
-                ),
-                clipBehavior: Clip.hardEdge,
-                child: InkWell(
-                  onTap: () {},
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        'https://alot.ae/assets/media/img/dubai.jpg',
-                        fit: BoxFit.fill,
+            return Row(
+              children: [
+                SizedBox(
+                  width: 140,
+                  height: 145,
+                  child: Card(
+                    elevation: 2,
+                    shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'AED 33,999',
-                              style: GoogleFonts.poppins(
-                                  color: colorRed,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
+                      onTap: () {},
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.network(
+                            'https://alot.ae/assets/media/img/dubai.jpg',
+                            fit: BoxFit.fill,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'AED 33,999',
+                                  style: GoogleFonts.poppins(
+                                      color: colorRed,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                                Text(
+                                  '1 Bed - 1 Bad',
+                                  style: GoogleFonts.poppins(
+                                      color: colorBlack,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 10),
+                                  maxLines: 1,
+                                ),
+                                Text(
+                                  'Farishta Azizi, Al Furjan, Dubai',
+                                  style: GoogleFonts.poppins(
+                                      color: colorGrey,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 9),
+                                  maxLines: 1,
+                                ),
+                              ],
                             ),
-                            Text(
-                              '1 Bed - 1 Bad',
-                              style: GoogleFonts.poppins(
-                                  color: colorBlack,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 10),
-                              maxLines: 1,
-                            ),
-                            Text(
-                              'Farishta Azizi, Al Furjan, Dubai',
-                              style: GoogleFonts.poppins(
-                                  color: colorGrey,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 9),
-                              maxLines: 1,
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                index == 9
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RawMaterialButton(
+                            onPressed: () {},
+                            elevation: 2.0,
+                            fillColor: colorWhite,
+                            padding: EdgeInsets.all(7.0),
+                            shape: CircleBorder(),
+                            child: Icon(
+                              Icons.arrow_forward,
+                            ),
+                          ),
+                          height4,
+                          Text(
+                            'View All',
+                            style: GoogleFonts.poppins(
+                                color: colorBlack, fontSize: 10),
+                          )
+                        ],
+                      )
+                    : Container()
+              ],
             );
           },
-          separatorBuilder: (ctx, index) => width10,
+          separatorBuilder: (ctx, index) {
+            return width10;
+          },
           itemCount: 10),
     );
   }
