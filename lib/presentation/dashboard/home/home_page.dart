@@ -126,6 +126,21 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   height3,
+                  PopularProperty(),
+                  height25,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Poplular in Services',
+                        style: GoogleFonts.poppins(
+                            color: colorBlack, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: Icon(Icons.arrow_forward))
+                    ],
+                  ),
+                  height3,
                   PopularProperty()
                 ],
               ),
