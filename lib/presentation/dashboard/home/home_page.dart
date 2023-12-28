@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   List<HomeCategoryModel> homeCategoryList = [];
   List<HomeLocationModel> homeLocationList = [];
+  List<HomeCategoryModel> homeCompanyList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -79,31 +80,37 @@ class HomeScreen extends StatelessWidget {
                   ),
                   height3,
                   SizedBox(
-                    height: 200,
+                    height: 130,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (ctx, index) {
                           return Column(
                             children: [
-                              Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                              SizedBox(
+                                width: 100,
+                                height: 100,
+                                child: Card(
+                                  shape: ContinuousRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)),
+                                  clipBehavior: Clip.hardEdge,
                                   child: Image.network(
-                                    'https://img.icons8.com/ios/50/property.png',
-                                    width: 70,
-                                    height: 70,
+                                    homeCompanyList[index].url,
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
                               ),
+                              height5,
                               Text(
-                                'Company',
+                                homeCompanyList[index].title,
                                 style: GoogleFonts.poppins(),
                               )
                             ],
                           );
                         },
                         separatorBuilder: (ctx, index) => width15,
-                        itemCount: 3),
+                        itemCount: homeCompanyList.length),
                   )
                 ],
               ),
@@ -214,6 +221,30 @@ class HomeScreen extends StatelessWidget {
     homeLocationList.add(HomeLocationModel(location: 'Sharjah', count: '0'));
     homeLocationList
         .add(HomeLocationModel(location: 'Umm al-Quwain', count: '0'));
+
+    homeCompanyList.clear();
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'Alot',
+        url:
+            'https://s3.ap-southeast-1.amazonaws.com/alot.ae/company_logos/a302e1e8-2137-4296-9b54-127fd9d24d8a/BnFowYIzHtkT.png'));
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'SanchiConnect',
+        url: 'https://alot.ae/assets/media/img/dubai.jpg'));
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'Test Company',
+        url:
+            'https://s3.ap-southeast-1.amazonaws.com/alot.ae/company_logos/a7e0952e-60b0-4baa-9410-152ae07c9c8a/zvPgNTTHzXjl.png'));
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'Alot',
+        url:
+            'https://s3.ap-southeast-1.amazonaws.com/alot.ae/company_logos/a302e1e8-2137-4296-9b54-127fd9d24d8a/BnFowYIzHtkT.png'));
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'SanchiConnect',
+        url: 'https://alot.ae/assets/media/img/dubai.jpg'));
+    homeCompanyList.add(HomeCategoryModel(
+        title: 'Test Company',
+        url:
+            'https://s3.ap-southeast-1.amazonaws.com/alot.ae/company_logos/a7e0952e-60b0-4baa-9410-152ae07c9c8a/zvPgNTTHzXjl.png'));
   }
 }
 
