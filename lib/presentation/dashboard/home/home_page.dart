@@ -301,47 +301,50 @@ class PopularProperty extends StatelessWidget {
                   ),
                 ),
                 clipBehavior: Clip.hardEdge,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.network(
-                      'https://alot.ae/assets/media/img/dubai.jpg',
-                      fit: BoxFit.fill,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'AED 33,999',
-                            style: GoogleFonts.poppins(
-                                color: colorRed,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 13),
-                          ),
-                          Text(
-                            '1 Bed - 1 Bad',
-                            style: GoogleFonts.poppins(
-                                color: colorBlack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10),
-                            maxLines: 1,
-                          ),
-                          Text(
-                            'Farishta Azizi, Al Furjan, Dubai',
-                            style: GoogleFonts.poppins(
-                                color: colorGrey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 9),
-                            maxLines: 1,
-                          ),
-                        ],
+                child: InkWell(
+                  onTap: () {},
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(
+                        'https://alot.ae/assets/media/img/dubai.jpg',
+                        fit: BoxFit.fill,
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'AED 33,999',
+                              style: GoogleFonts.poppins(
+                                  color: colorRed,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 13),
+                            ),
+                            Text(
+                              '1 Bed - 1 Bad',
+                              style: GoogleFonts.poppins(
+                                  color: colorBlack,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'Farishta Azizi, Al Furjan, Dubai',
+                              style: GoogleFonts.poppins(
+                                  color: colorGrey,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 9),
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             );
