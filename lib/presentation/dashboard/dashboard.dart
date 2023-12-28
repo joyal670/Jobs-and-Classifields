@@ -24,7 +24,10 @@ class DashboardScreen extends StatelessWidget {
         child: ValueListenableBuilder(
           valueListenable: bottomNavigationIndex,
           builder: (context, int index, _) {
-            return _pages[index];
+            return IndexedStack(
+              index: index,
+              children: _pages,
+            );
           },
         ),
       ),

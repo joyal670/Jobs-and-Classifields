@@ -5,6 +5,7 @@ import 'package:alot/core/dims/dims.dart';
 import 'package:alot/core/utils/utils.dart';
 import 'package:alot/presentation/auth/forgot_password/forgot_password.dart';
 import 'package:alot/presentation/auth/register/register.dart';
+import 'package:alot/presentation/dashboard/bottom_nav.dart';
 import 'package:alot/presentation/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.topRight,
               child: TextButton(
                 onPressed: () {
+                  bottomNavigationIndex.value = 0;
                   Navigator.push(
                     context,
                     CupertinoPageRoute(
