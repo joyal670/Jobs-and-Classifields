@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:alot/core/colors/colors.dart';
+import 'package:alot/presentation/dashboard/login/login_form.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ValueNotifier<int> bottomNavigationIndex = ValueNotifier(0);
@@ -14,7 +18,18 @@ class BottomNavigationWidget extends StatelessWidget {
         return BottomNavigationBar(
           currentIndex: newIndex,
           onTap: (index) {
+            if (index == 1) {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  fullscreenDialog: true,
+                  builder: (context) => LoginFormScreen(),
+                ),
+              );
+              return;
+            }
             bottomNavigationIndex.value = index;
+            // print('after');
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: colorWhite,

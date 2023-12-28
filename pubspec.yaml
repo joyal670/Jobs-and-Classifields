@@ -63,6 +63,9 @@ dependencies:
 
   # svg
   flutter_svg: ^2.0.9
+
+  # social media buttons
+  social_media_buttons: ^1.0.0
   
 
 
