@@ -79,39 +79,54 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   height3,
-                  SizedBox(
-                    height: 130,
-                    child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (ctx, index) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                width: 100,
-                                height: 100,
-                                child: Card(
-                                  shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  clipBehavior: Clip.hardEdge,
-                                  child: Image.network(
-                                    homeCompanyList[index].url,
-                                    width: 100,
-                                    height: 100,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              height5,
-                              Text(
-                                homeCompanyList[index].title,
-                                style: GoogleFonts.poppins(),
-                              )
-                            ],
-                          );
-                        },
-                        separatorBuilder: (ctx, index) => width15,
-                        itemCount: homeCompanyList.length),
-                  )
+                  TopCompany(
+                    homeCompanyList: homeCompanyList,
+                  ),
+                  height60,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Poplular in Properties',
+                        style: GoogleFonts.poppins(
+                            color: colorBlack, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: Icon(Icons.arrow_forward))
+                    ],
+                  ),
+                  height3,
+                  PopularProperty(),
+                  height25,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Poplular in Vechiles & Spares',
+                        style: GoogleFonts.poppins(
+                            color: colorBlack, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: Icon(Icons.arrow_forward))
+                    ],
+                  ),
+                  height3,
+                  PopularProperty(),
+                  height25,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Poplular in Furnitures',
+                        style: GoogleFonts.poppins(
+                            color: colorBlack, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: Icon(Icons.arrow_forward))
+                    ],
+                  ),
+                  height3,
+                  PopularProperty()
                 ],
               ),
             ),
@@ -245,6 +260,127 @@ class HomeScreen extends StatelessWidget {
         title: 'Test Company',
         url:
             'https://s3.ap-southeast-1.amazonaws.com/alot.ae/company_logos/a7e0952e-60b0-4baa-9410-152ae07c9c8a/zvPgNTTHzXjl.png'));
+  }
+}
+
+class PopularProperty extends StatelessWidget {
+  const PopularProperty({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 160,
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (ctx, index) {
+            return SizedBox(
+              width: 150,
+              height: 155,
+              child: Card(
+                elevation: 2,
+                shape: ContinuousRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.network(
+                      'https://alot.ae/assets/media/img/dubai.jpg',
+                      fit: BoxFit.fill,
+                    ),
+                    height5,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'AED 33,999',
+                            style: GoogleFonts.poppins(
+                                color: colorRed,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13),
+                          ),
+                          Text(
+                            '1 Bed - 1 Bad',
+                            style: GoogleFonts.poppins(
+                                color: colorBlack,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 10),
+                            maxLines: 1,
+                          ),
+                          Text(
+                            'Farishta Azizi, Al Furjan, Dubai',
+                            style: GoogleFonts.poppins(
+                                color: colorGrey,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 9),
+                            maxLines: 1,
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (ctx, index) => width10,
+          itemCount: 10),
+    );
+  }
+}
+
+class TopCompany extends StatelessWidget {
+  const TopCompany({
+    super.key,
+    required this.homeCompanyList,
+  });
+
+  final List<HomeCategoryModel> homeCompanyList;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 130,
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (ctx, index) {
+            return Column(
+              children: [
+                SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: Card(
+                    shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.network(
+                      homeCompanyList[index].url,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                height5,
+                Text(
+                  homeCompanyList[index].title,
+                  style: GoogleFonts.poppins(),
+                )
+              ],
+            );
+          },
+          separatorBuilder: (ctx, index) => width15,
+          itemCount: homeCompanyList.length),
+    );
   }
 }
 
