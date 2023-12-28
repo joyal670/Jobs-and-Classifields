@@ -34,13 +34,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Browse By Category',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   MainCategories(
                     homeCategoryList: homeCategoryList,
                   ),
@@ -53,13 +52,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Browse By City',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   LocationCategories(
                     homeLocationList: homeLocationList,
                   ),
@@ -72,13 +70,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Top companies',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   TopCompany(
                     homeCompanyList: homeCompanyList,
                   ),
@@ -89,13 +86,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Poplular in Properties',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   PopularProperty(),
                   height25,
                   Row(
@@ -104,13 +100,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Poplular in Vechiles & Spares',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   PopularProperty(),
                   height25,
                   Row(
@@ -119,13 +114,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Poplular in Furnitures',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   PopularProperty(),
                   height25,
                   Row(
@@ -134,13 +128,12 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Poplular in Services',
                         style: GoogleFonts.poppins(
-                            color: colorBlack, fontWeight: FontWeight.bold),
+                            color: colorBlack, fontWeight: FontWeight.w500),
                       ),
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.arrow_forward))
                     ],
                   ),
-                  height3,
                   PopularProperty()
                 ],
               ),
