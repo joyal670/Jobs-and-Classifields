@@ -271,13 +271,13 @@ class PopularProperty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: 150,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (ctx, index) {
             return SizedBox(
-              width: 150,
-              height: 155,
+              width: 140,
+              height: 145,
               child: Card(
                 elevation: 2,
                 shape: ContinuousRectangleBorder(
@@ -294,7 +294,6 @@ class PopularProperty extends StatelessWidget {
                       'https://alot.ae/assets/media/img/dubai.jpg',
                       fit: BoxFit.fill,
                     ),
-                    height5,
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
