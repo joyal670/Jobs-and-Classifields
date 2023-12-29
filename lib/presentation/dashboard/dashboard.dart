@@ -3,6 +3,7 @@
 import 'package:alot/core/colors/colors.dart';
 import 'package:alot/presentation/dashboard/bottom_nav.dart';
 import 'package:alot/presentation/dashboard/home/home_page.dart';
+import 'package:alot/presentation/dashboard/menu/account_screen.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class DashboardScreen extends StatelessWidget {
     Container(),
     Container(),
     Container(),
-    Container(),
+    AccountScreen(),
   ];
 
   @override
