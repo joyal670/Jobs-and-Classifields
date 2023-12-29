@@ -99,7 +99,7 @@ class AccountScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Select Language',
+                                    'Select City',
                                     style: GoogleFonts.poppins(
                                         fontSize: 16, color: colorBlack),
                                   ),
@@ -174,57 +174,65 @@ class AccountScreen extends StatelessWidget {
 
               showModalBottomSheet<void>(
                 context: context,
+                isScrollControlled: true,
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.75),
                 builder: (BuildContext context) {
-                  return Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Select Language',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: colorBlack),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                icon: Icon(
-                                  Icons.close,
-                                  size: 25,
-                                ))
-                          ],
-                        ),
-                        Divider(),
-                        height20,
-                        SizedBox(
-                          height: 150,
-                          child: ListView.separated(
-                            itemBuilder: (ctx, index) {
-                              return ListTile(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                leading: Text(model[index].name),
-                                trailing: model[index].isSelected
-                                    ? Icon(
-                                        Icons.done,
-                                        color: colorBlue,
-                                      )
-                                    : SizedBox(),
-                              );
-                            },
-                            separatorBuilder: (context, index) => Divider(),
-                            itemCount: model.length,
+                  return DraggableScrollableSheet(
+                      expand: false,
+                      builder: (context, scrollController) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Select Language',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 16, color: colorBlack),
+                                  ),
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      icon: Icon(
+                                        Icons.close,
+                                        size: 25,
+                                      ))
+                                ],
+                              ),
+                              Divider(),
+                              height20,
+                              Expanded(
+                                child: ListView.separated(
+                                  controller: scrollController,
+                                  itemBuilder: (ctx, index) {
+                                    return ListTile(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      leading: Text(model[index].name),
+                                      trailing: model[index].isSelected
+                                          ? Icon(
+                                              Icons.done,
+                                              color: colorBlue,
+                                            )
+                                          : SizedBox(),
+                                    );
+                                  },
+                                  separatorBuilder: (context, index) =>
+                                      Divider(),
+                                  itemCount: model.length,
+                                ),
+                              )
+                            ],
                           ),
-                        )
-                      ],
-                    ),
-                  );
+                        );
+                      });
                 },
               );
             },
@@ -258,7 +266,73 @@ class AccountScreen extends StatelessWidget {
             style: GoogleFonts.poppins(color: colorGrey),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              List<LanguageModel> model = [];
+              model.add(LanguageModel(name: "Proeprty Blog", isSelected: true));
+              model.add(LanguageModel(name: "Car Blog", isSelected: false));
+
+              showModalBottomSheet<void>(
+                context: context,
+                isScrollControlled: true,
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.75),
+                builder: (BuildContext context) {
+                  return DraggableScrollableSheet(
+                      expand: false,
+                      builder: (context, scrollController) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Wrap(
+                            //  mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Blogs',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 16, color: colorBlack),
+                                  ),
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      icon: Icon(
+                                        Icons.close,
+                                        size: 25,
+                                      ))
+                                ],
+                              ),
+                              Divider(),
+                              height20,
+                              ListView.separated(
+                                controller: scrollController,
+                                shrinkWrap: true,
+                                itemBuilder: (ctx, index) {
+                                  return ListTile(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    leading: Text(model[index].name),
+                                    trailing: model[index].isSelected
+                                        ? Icon(
+                                            Icons.done,
+                                            color: colorBlue,
+                                          )
+                                        : SizedBox(),
+                                  );
+                                },
+                                separatorBuilder: (context, index) => Divider(),
+                                itemCount: model.length,
+                              )
+                            ],
+                          ),
+                        );
+                      });
+                },
+              );
+            },
             titleTextStyle: GoogleFonts.poppins(color: colorBlack),
             leading: Icon(
               Icons.article_outlined,
